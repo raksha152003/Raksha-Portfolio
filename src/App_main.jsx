@@ -1,43 +1,5 @@
 import { useEffect, useState } from "react"
 
-import {
-  Sprout,
-  Building2,
-  Monitor,
-  TrafficCone,
-  Activity,
-  TrendingUp,
-  Smile,
-  Code2,
-  Brain,
-  Eye,
-  Settings,
-  Globe,
-  Wrench,
-  FlaskConical,
-  GraduationCap,
-  Medal,
-  BookOpen,
-  Rocket,
-  Bot,
-  Coffee,
-  Trophy,
-  Lightbulb,
-  Waves,
-  Star,
-  Palette,
-  Languages,
-  Handshake,
-  Flower2,
-  FileDown,
-  Sparkles,
-  ChevronDown,
-  Menu,
-  X,
-  Mail,
-  ExternalLink,
-} from "lucide-react"
-
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -69,7 +31,7 @@ function App() {
     {
       title: "AgroXAI",
       category: "Federated Learning • Explainable AI",
-      icon: Sprout,
+      icon: "🌱",
       description:
         "A privacy-preserving plant disease detection system using Federated Learning and deep learning, enabling collaborative model training without sharing raw image data.",
       details:
@@ -87,7 +49,7 @@ function App() {
     {
       title: "Structural Health Monitoring",
       category: "Computer Vision • YOLO",
-      icon: Building2,
+      icon: "🏗️",
       description:
         "A computer vision-based structural inspection system for automated detection and localization of cracks in infrastructure images.",
       details:
@@ -104,7 +66,7 @@ function App() {
     {
       title: "AI Powered Mock Interview Platform",
       category: "Generative AI • Full Stack",
-      icon: Monitor,
+      icon: "💻",
       description:
         "An AI-powered web platform for automated and interactive mock interviews to support technical interview preparation.",
       details:
@@ -122,7 +84,7 @@ function App() {
     {
       title: "Traffic Deadlock Detection & Prevention Simulator",
       category: "Operating Systems • Simulation",
-      icon: TrafficCone,
+      icon: "🚦",
       description:
         "A four-way traffic junction simulator demonstrating deadlock detection and prevention concepts inspired by operating systems and multi-agent systems.",
       details:
@@ -138,7 +100,7 @@ function App() {
     {
       title: "PneumoVision",
       category: "Deep Learning • Medical Imaging",
-      icon: Activity,
+      icon: "🫁",
       description:
         "A deep learning-based medical image classification system for automated pneumonia detection from chest X-ray images.",
       details:
@@ -156,7 +118,7 @@ function App() {
     {
       title: "Stock Market Trend Prediction",
       category: "Machine Learning",
-      icon: TrendingUp,
+      icon: "📈",
       description:
         "A predictive machine learning model developed to analyze and forecast stock market trends.",
       details:
@@ -172,7 +134,7 @@ function App() {
     {
       title: "Face Emotions Detection System",
       category: "Computer Vision • Machine Learning",
-      icon: Smile,
+      icon: "😊",
       description:
         "A real-time computer vision and machine learning system for detecting and classifying human facial emotions.",
       details:
@@ -192,13 +154,13 @@ function App() {
   const skillGroups = [
     {
       title: "Programming",
-      icon: Code2,
+      icon: "💻",
       skills: ["Python", "Java", "C", "SQL"],
     },
 
     {
       title: "AI / Machine Learning",
-      icon: Brain,
+      icon: "🧠",
       skills: [
         "Artificial Intelligence",
         "Machine Learning",
@@ -211,7 +173,7 @@ function App() {
 
     {
       title: "Computer Vision",
-      icon: Eye,
+      icon: "👁️",
       skills: [
         "Object Detection",
         "Image Segmentation",
@@ -224,7 +186,7 @@ function App() {
 
     {
       title: "Frameworks & Libraries",
-      icon: Settings,
+      icon: "⚙️",
       skills: [
         "PyTorch",
         "TensorFlow",
@@ -238,7 +200,7 @@ function App() {
 
     {
       title: "Web Technologies",
-      icon: Globe,
+      icon: "🌐",
       skills: [
         "React",
         "Next.js",
@@ -250,7 +212,7 @@ function App() {
 
     {
       title: "Developer Tools",
-      icon: Wrench,
+      icon: "🛠️",
       skills: [
         "VS Code",
         "Jupyter Notebook",
@@ -262,7 +224,7 @@ function App() {
 
     {
       title: "ML Workflow",
-      icon: FlaskConical,
+      icon: "🔬",
       skills: [
         "Data Annotation",
         "Data Preprocessing",
@@ -287,7 +249,7 @@ function App() {
 
       <nav className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
 
-        <div className="glass navbar-glass max-w-6xl mx-auto rounded-full px-5 py-3 flex items-center justify-between">
+        <div className="glass max-w-6xl mx-auto rounded-full px-5 py-3 flex items-center justify-between">
 
           <a
             href="#home"
@@ -328,16 +290,25 @@ function App() {
               Contact
             </a>
 
-           <a
-  href="#resume"
-  className="nav-link"
->
-  Resume
-</a>
+            <a
+              href="/Raksha_Resume.pdf"
+              download
+              className="nav-link"
+            >
+              Resume ↓
+            </a>
 
           </div>
 
-          
+          {/* RESUME BUTTON */}
+
+          <a
+            href="/Raksha_Resume.pdf"
+            download
+            className="hidden md:inline-flex pink-button !py-2 !px-5 text-sm"
+          >
+            Download Resume
+          </a>
 
           {/* MOBILE MENU */}
 
@@ -345,11 +316,7 @@ function App() {
             onClick={() => setMenuOpen(!menuOpen)}
             className="lg:hidden text-xl text-[#684873]"
           >
-            {menuOpen ? (
-  <X size={22} strokeWidth={1.7} />
-) : (
-  <Menu size={22} strokeWidth={1.7} />
-)}
+            {menuOpen ? "✕" : "☰"}
           </button>
 
         </div>
@@ -431,13 +398,9 @@ function App() {
 
         <div className="max-w-5xl mx-auto text-center">
 
-          <div className="hero-badge inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm text-[#76577d] mb-7">
+          <div className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm text-[#76577d] mb-7">
 
-            <Sparkles
-  size={16}
-  strokeWidth={1.7}
-  className="text-[#b26bbd]"
-/>
+            <span>✦</span>
 
             <span>
               AI / ML Engineer • R&D • Computer Vision
@@ -476,10 +439,7 @@ function App() {
               href="#projects"
               className="pink-button"
             >
-              <span className="inline-flex items-center gap-2">
-  Explore My Work
-  <Sparkles size={17} strokeWidth={1.7} />
-</span>
+              Explore My Work ✨
             </a>
 
             <a
@@ -487,10 +447,7 @@ function App() {
               download
               className="outline-button"
             >
-              <span className="inline-flex items-center gap-2">
-  <FileDown size={17} strokeWidth={1.7} />
-  Download Resume
-</span>
+              Download Resume 📄
             </a>
 
           </div>
@@ -498,8 +455,8 @@ function App() {
           <div className="mt-20 text-sm text-[#a18ea5]">
 
             <div className="scroll-dot">
-  <ChevronDown size={18} strokeWidth={1.6} />
-</div>
+              ↓
+            </div>
 
             Scroll to explore
 
@@ -604,13 +561,9 @@ function App() {
 
             <div className="glass rounded-[2rem] p-7">
 
-<div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <GraduationCap
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+              <span className="text-3xl">
+                🎓
+              </span>
 
               <p className="text-sm text-[#a56caf] mt-5">
                 2025 - Present
@@ -634,13 +587,9 @@ function App() {
 
             <div className="glass rounded-[2rem] p-7">
 
-             <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <Medal
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+              <span className="text-3xl">
+                🏅
+              </span>
 
               <p className="text-sm text-[#a56caf] mt-5">
                 2021 - 2025
@@ -672,13 +621,9 @@ function App() {
 
             <div className="glass rounded-[2rem] p-7">
 
-              <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <BookOpen
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+              <span className="text-3xl">
+                📚
+              </span>
 
               <h3 className="text-xl font-bold mt-5">
                 PUC - PCMB
@@ -698,13 +643,9 @@ function App() {
 
             <div className="glass rounded-[2rem] p-7">
 
-             <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <BookOpen
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+              <span className="text-3xl">
+                📖
+              </span>
 
               <h3 className="text-xl font-bold mt-5">
                 SSLC
@@ -742,26 +683,18 @@ function App() {
 
           <div className="grid md:grid-cols-2 gap-6 mt-12">
 
-  {skillGroups.map((group, index) => (
+            {skillGroups.map((group) => (
 
-    <div
-      key={group.title}
-      className={`glass rounded-[2rem] p-7 ${
-        index === skillGroups.length - 1 && skillGroups.length % 2 !== 0
-          ? "md:col-span-2 md:w-[calc(50%-0.75rem)] md:mx-auto"
-          : ""
-      }`}
-    >
+              <div
+                key={group.title}
+                className="glass rounded-[2rem] p-7"
+              >
 
                 <div className="flex items-center gap-3">
 
-                  <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <group.icon
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+                  <span className="text-3xl">
+                    {group.icon}
+                  </span>
 
                   <h3 className="text-xl font-bold">
                     {group.title}
@@ -832,13 +765,10 @@ function App() {
 
                 </div>
 
-              <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <Rocket
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+                <span className="text-4xl">
+                  🚀
+                </span>
+
               </div>
 
               <ul className="mt-6 space-y-3 text-[#766a7d] leading-7 list-disc list-inside">
@@ -921,13 +851,9 @@ function App() {
 
                 </div>
 
-                <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <Bot
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+                <span className="text-4xl">
+                  🤖
+                </span>
 
               </div>
 
@@ -969,13 +895,10 @@ function App() {
 
                 </div>
 
-                <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <Coffee
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+                <span className="text-4xl">
+                  ☕
+                </span>
+
               </div>
 
               <ul className="mt-6 space-y-3 text-[#766a7d] leading-7 list-disc list-inside">
@@ -1017,13 +940,9 @@ function App() {
 
                 </div>
 
-                <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <Code2
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+                <span className="text-4xl">
+                  🐍
+                </span>
 
               </div>
 
@@ -1073,25 +992,17 @@ function App() {
 
           <div className="grid md:grid-cols-2 gap-6 mt-12">
 
-  {projects.map((project, index) => (
+            {projects.map((project) => (
 
-    <div
-      key={project.title}
-      className={`project-card glass rounded-[2rem] p-7 ${
-        index === projects.length - 1 && projects.length % 2 !== 0
-          ? "md:col-span-2 md:w-[calc(50%-0.75rem)] md:mx-auto"
-          : ""
-      }`}
-    >
+              <div
+                key={project.title}
+                className="project-card glass rounded-[2rem] p-7"
+              >
 
-               <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <project.icon
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
-    
+                <span className="text-4xl">
+                  {project.icon}
+                </span>
+
                 <p className="text-xs uppercase tracking-wider text-[#a56caf] font-bold mt-5">
                   {project.category}
                 </p>
@@ -1144,7 +1055,7 @@ function App() {
           </p>
 
           <h2 className="section-title">
-            Things I'm proud of 
+            Things I'm proud of ✨
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6 mt-12">
@@ -1153,13 +1064,9 @@ function App() {
 
             <div className="glass rounded-[2rem] p-8">
 
-              <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <Trophy
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+              <span className="text-4xl">
+                🏆
+              </span>
 
               <h3 className="text-xl font-bold mt-5">
                 Engineering Gold Medalist
@@ -1178,13 +1085,9 @@ function App() {
 
             <div className="glass rounded-[2rem] p-8">
 
-             <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <Lightbulb
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+              <span className="text-4xl">
+                💡
+              </span>
 
               <h3 className="text-xl font-bold mt-5">
                 Hack4Sustainability
@@ -1211,13 +1114,10 @@ function App() {
 
             <div className="glass rounded-[2rem] p-8">
 
-              <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <Waves
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+              <span className="text-4xl">
+                🌊
+              </span>
+
               <h3 className="text-xl font-bold mt-5">
                 Mission Amrit Sarovar
               </h3>
@@ -1236,13 +1136,9 @@ function App() {
 
             <div className="glass rounded-[2rem] p-8">
 
-              <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <Star
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+              <span className="text-4xl">
+                ⭐
+              </span>
 
               <h3 className="text-xl font-bold mt-5">
                 Excellent Intern Awards
@@ -1284,13 +1180,9 @@ function App() {
 
             <div className="glass rounded-[2rem] p-8">
 
-              <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <Palette
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+              <span className="text-4xl">
+                🎨
+              </span>
 
               <h3 className="text-xl font-bold mt-5">
                 Creative Interests
@@ -1325,13 +1217,9 @@ function App() {
 
             <div className="glass rounded-[2rem] p-8">
 
-             <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <Languages
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+              <span className="text-4xl">
+                🌍
+              </span>
 
               <h3 className="text-xl font-bold mt-5">
                 Languages
@@ -1358,13 +1246,10 @@ function App() {
             {/* VOLUNTEERING */}
 
             <div className="glass rounded-[2rem] p-8">
-<div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <Handshake
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+
+              <span className="text-4xl">
+                🤝
+              </span>
 
               <h3 className="text-xl font-bold mt-5">
                 Community & Leadership
@@ -1383,13 +1268,9 @@ function App() {
 
             <div className="glass rounded-[2rem] p-8">
 
-              <div className="w-14 h-14 rounded-2xl bg-[#f4e6f7] flex items-center justify-center">
-  <Flower2
-    size={27}
-    strokeWidth={1.6}
-    className="text-[#9b67ae]"
-  />
-</div>
+              <span className="text-4xl">
+                🌸
+              </span>
 
               <h3 className="text-xl font-bold mt-5">
                 Outside the Screen
@@ -1486,10 +1367,7 @@ function App() {
                 href="mailto:rakshahema2003@gmail.com"
                 className="pink-button"
               >
-                <span className="inline-flex items-center gap-2">
-  <Mail size={18} strokeWidth={1.7} />
-  Email Me
-</span>
+                Email Me 💌
               </a>
 
               <a
@@ -1498,10 +1376,7 @@ function App() {
                 rel="noreferrer"
                 className="outline-button"
               >
-                <span className="inline-flex items-center gap-2">
-  GitHub
-  <ExternalLink size={14} strokeWidth={1.7} />
-</span>
+                GitHub ↗
               </a>
 
               <a
@@ -1510,10 +1385,7 @@ function App() {
                 rel="noreferrer"
                 className="outline-button"
               >
-                <span className="inline-flex items-center gap-2">
-  LinkedIn
-  <ExternalLink size={14} strokeWidth={1.7} />
-</span>
+                LinkedIn ↗
               </a>
 
               <a
@@ -1522,10 +1394,7 @@ function App() {
                   rel="noreferrer"
                   className="outline-button"
               >
-                <span className="inline-flex items-center gap-2">
-  Instagram
-  <ExternalLink size={14} strokeWidth={1.7} />
-</span>
+                Instagram ↗
               </a>
 
 
