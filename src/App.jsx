@@ -1,7 +1,29 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+  const elements = document.querySelectorAll(".reveal")
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible")
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    {
+      threshold: 0.12,
+    }
+  )
+
+  elements.forEach((element) => observer.observe(element))
+
+  return () => observer.disconnect()
+}, [])
 
   // ================= PROJECTS =================
 
@@ -446,73 +468,87 @@ function App() {
 
       {/* ================= ABOUT ================= */}
 
-      <section id="about" className="section">
+<section id="about" className="section reveal">
 
-        <div className="section-container">
+  <div className="section-container">
 
-          <p className="section-label">
-            01 — About Me
-          </p>
+    <p className="section-label">
+      01 - About Me
+    </p>
 
-          <div className="grid md:grid-cols-2 gap-12 mt-10 items-center">
+    <div className="mt-8">
 
-            <div>
+      <h2 className="section-title">
+        AI enthusiast.{" "}
+        <span className="gradient-text">
+          Creative builder.
+        </span>
+      </h2>
 
-              <h2 className="section-title">
+    </div>
 
-                AI enthusiast.
-                <br />
+    <div className="glass rounded-[2rem] p-8 md:p-10 lg:p-12 mt-10">
 
-                <span className="gradient-text">
-                  Creative builder.
-                </span>
+      <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
 
-              </h2>
+        <p className="text-[#6e6373] leading-8">
 
-            </div>
+          I'm Raksha, an AI/ML Engineer currently pursuing my
+          M.Tech in Artificial Intelligence and Machine Learning.
+          My journey in technology has been driven by curiosity
+          about how intelligent systems work and how they can be
+          applied to solve practical problems.
 
-            <div className="glass rounded-[2rem] p-8">
+        </p>
 
-              <p className="text-[#6e6373] leading-8">
+        <p className="text-[#6e6373] leading-8">
 
-                I'm Raksha, an AI/ML Engineer currently pursuing
-                my Master of Technology in Artificial Intelligence
-                and Machine Learning.
+          I've worked across computer vision, deep learning,
+          machine learning, federated learning, Generative AI,
+          and full-stack development through academic projects,
+          internships, and independent work. These experiences
+          have taken me from working with datasets and
+          experimenting with models to building complete
+          applications around them.
 
-              </p>
+        </p>
 
-              <p className="text-[#6e6373] leading-8 mt-5">
+        <p className="text-[#6e6373] leading-8">
 
-                My work spans computer vision, deep learning,
-                federated learning, Generative AI and full-stack
-                machine learning applications.
+          I like being involved in the entire process rather than
+          focusing only on the model - understanding the problem,
+          preparing the data, experimenting with different
+          approaches, evaluating results, and turning the solution
+          into something usable.
 
-              </p>
+        </p>
 
-              <p className="text-[#6e6373] leading-8 mt-5">
+        <p className="text-[#6e6373] leading-8">
 
-                I enjoy taking ideas from data preprocessing and
-                model development to evaluation, deployment and
-                usable real-world applications.
+          Beyond technology, I enjoy creative work, learning new
+          things, and taking on challenges that push me outside
+          my comfort zone. I like the process of figuring things
+          out, experimenting with ideas, and gradually turning them
+          into something real.
 
-              </p>
+        </p>
 
-            </div>
+      </div>
 
-          </div>
+    </div>
 
-        </div>
+  </div>
 
-      </section>
+</section>
 
       {/* ================= EDUCATION ================= */}
 
-      <section id="education" className="section">
+      <section id="education" className="section reveal">
 
         <div className="section-container">
 
           <p className="section-label">
-            02 — Education
+            02 - Education
           </p>
 
           <h2 className="section-title">
@@ -633,12 +669,12 @@ function App() {
 
       {/* ================= SKILLS ================= */}
 
-      <section id="skills" className="section">
+      <section id="skills" className="section reveal">
 
         <div className="section-container">
 
           <p className="section-label">
-            03 — Skills
+            03 - Skills
           </p>
 
           <h2 className="section-title">
@@ -693,12 +729,12 @@ function App() {
 
       {/* ================= EXPERIENCE ================= */}
 
-      <section id="experience" className="section">
+      <section id="experience" className="section reveal">
 
         <div className="section-container">
 
           <p className="section-label">
-            04 — Experience
+            04 - Experience
           </p>
 
           <h2 className="section-title">
@@ -935,12 +971,12 @@ function App() {
 
       {/* ================= PROJECTS ================= */}
 
-      <section id="projects" className="section">
+      <section id="projects" className="section reveal">
 
         <div className="section-container">
 
           <p className="section-label">
-            05 — Projects
+            05 - Projects
           </p>
 
           <h2 className="section-title">
@@ -1010,12 +1046,12 @@ function App() {
 
       {/* ================= ACHIEVEMENTS ================= */}
 
-      <section id="achievements" className="section">
+      <section id="achievements" className="section reveal">
 
         <div className="section-container">
 
           <p className="section-label">
-            06 — Achievements
+            06 - Achievements
           </p>
 
           <h2 className="section-title">
@@ -1126,12 +1162,12 @@ function App() {
 
       {/* ================= EXTRA WORK ================= */}
 
-      <section id="extra" className="section">
+      <section id="extra" className="section reveal">
 
         <div className="section-container">
 
           <p className="section-label">
-            07 — Beyond Technology
+            07 - Beyond Technology
           </p>
 
           <h2 className="section-title">
@@ -1257,14 +1293,14 @@ function App() {
 
       {/* ================= RESUME ================= */}
 
-      <section id="resume" className="section">
+      <section id="resume" className="section reveal">
 
         <div className="section-container">
 
           <div className="glass rounded-[3rem] p-10 md:p-16 text-center">
 
             <p className="section-label">
-              08 — Resume
+              08 - Resume
             </p>
 
             <h2 className="section-title mt-5">
@@ -1298,14 +1334,14 @@ function App() {
 
       {/* ================= CONTACT ================= */}
 
-      <section id="contact" className="section pb-24">
+      <section id="contact" className="section reveal">
 
         <div className="section-container">
 
           <div className="glass rounded-[3rem] p-10 md:p-16 text-center">
 
             <p className="section-label">
-              09 — Contact
+              09 - Contact
             </p>
 
             <h2 className="section-title mt-5">
@@ -1351,6 +1387,16 @@ function App() {
               >
                 LinkedIn ↗
               </a>
+
+              <a
+                 href="https://www.instagram.com/raksha_mh/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="outline-button"
+              >
+                Instagram ↗
+              </a>
+
 
             </div>
 
