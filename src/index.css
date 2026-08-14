@@ -1,0 +1,553 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #302438;
+  background: #fff9fd;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 5% 5%,
+      rgba(248, 206, 235, 0.55),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 95% 20%,
+      rgba(216, 203, 248, 0.5),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 225, 240, 0.45),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 80% 90%,
+      rgba(224, 211, 248, 0.35),
+      transparent 25%
+    ),
+    #fff9fd;
+}
+
+body,
+button,
+a,
+input,
+textarea {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+::selection {
+  background: #e5c8eb;
+  color: #4b3154;
+}
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+section {
+  scroll-margin-top: 100px;
+}
+
+/* =========================================================
+   FLOATING BACKGROUND BLOBS
+========================================================= */
+
+.blob {
+  position: fixed;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(85px);
+  opacity: 0.7;
+}
+
+.blob-one {
+  width: 330px;
+  height: 330px;
+  top: 5%;
+  left: -140px;
+  background: rgba(247, 184, 220, 0.4);
+  animation: floatOne 14s ease-in-out infinite;
+}
+
+.blob-two {
+  width: 360px;
+  height: 360px;
+  top: 38%;
+  right: -160px;
+  background: rgba(196, 180, 241, 0.32);
+  animation: floatTwo 17s ease-in-out infinite;
+}
+
+.blob-three {
+  width: 300px;
+  height: 300px;
+  bottom: 2%;
+  left: 38%;
+  background: rgba(255, 205, 231, 0.28);
+  animation: floatThree 15s ease-in-out infinite;
+}
+
+@keyframes floatOne {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(100px, 70px, 0);
+  }
+}
+
+@keyframes floatTwo {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-90px, -60px, 0);
+  }
+}
+
+@keyframes floatThree {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(70px, -60px, 0);
+  }
+}
+
+/* =========================================================
+   GLASSMORPHISM
+========================================================= */
+
+.glass {
+  background: rgba(255, 255, 255, 0.62);
+
+  border: 1px solid rgba(255, 255, 255, 0.82);
+
+  box-shadow:
+    0 20px 60px rgba(111, 75, 120, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 110px 24px;
+}
+
+.section-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  color: #9b67ae;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin-top: 12px;
+
+  /* KEEP ORIGINAL PLAYFAIR */
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(2.3rem, 5vw, 3.7rem);
+  line-height: 1.08;
+
+  color: #35243d;
+
+  letter-spacing: -0.025em;
+}
+
+/* =========================================================
+   GRADIENT TEXT
+========================================================= */
+
+.gradient-text {
+  background:
+    linear-gradient(
+      120deg,
+      #9259a7 0%,
+      #d184c5 45%,
+      #8a6dc3 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-name {
+  /* KEEP ORIGINAL PLAYFAIR */
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(4.5rem, 11vw, 8.5rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.045em;
+
+  color: #332238;
+
+  animation: heroAppear 1s ease forwards;
+}
+
+@keyframes heroAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.pink-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 13px 25px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #a568b7,
+      #c986c8
+    );
+
+  color: #ffffff;
+
+  font-size: 0.92rem;
+  font-weight: 600;
+
+  box-shadow:
+    0 12px 28px rgba(166, 107, 184, 0.24);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+.pink-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 38px rgba(166, 107, 184, 0.3);
+
+  filter: brightness(1.03);
+}
+
+.pink-button:active {
+  transform: translateY(-1px);
+}
+
+.outline-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 12px 25px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.58);
+
+  border: 1px solid #e4cfe8;
+
+  color: #71467f;
+
+  font-size: 0.92rem;
+  font-weight: 600;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.outline-button:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 14px 30px rgba(111, 75, 120, 0.1);
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-link {
+  position: relative;
+
+  color: #685c6e;
+
+  font-size: 0.88rem;
+  font-weight: 500;
+
+  transition: color 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -5px;
+
+  width: 0;
+  height: 1.5px;
+
+  border-radius: 999px;
+
+  background: #b26bbd;
+
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #9b67ae;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   PROJECT CARDS
+========================================================= */
+
+.project-card {
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.project-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  top: -90px;
+  right: -80px;
+
+  border-radius: 999px;
+
+  background: rgba(226, 191, 232, 0.25);
+
+  filter: blur(15px);
+
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 28px 65px rgba(111, 75, 120, 0.14);
+
+  border-color: rgba(210, 177, 218, 0.65);
+}
+
+.project-card:hover::before {
+  transform: scale(1.4);
+}
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.scroll-dot {
+  display: inline-block;
+
+  animation: scrollDown 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: translateY(9px);
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  letter-spacing: 0.01em;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 82px 20px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-name {
+    font-size: clamp(4rem, 21vw, 6.5rem);
+  }
+
+  .glass {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+
+  .blob-one {
+    width: 230px;
+    height: 230px;
+  }
+
+  .blob-two {
+    width: 240px;
+    height: 240px;
+  }
+
+  .blob-three {
+    width: 210px;
+    height: 210px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 420px) {
+  .section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-name {
+    font-size: 4rem;
+  }
+
+  .pink-button,
+  .outline-button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
